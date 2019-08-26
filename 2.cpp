@@ -1,16 +1,17 @@
 
-#include<stdio.h> 
+#include<iostream> 
+using namespace std;
 
 
-void printMaxActivities(int s[], int f[], int n) 
+void MAXIMUMACTS(int s[], int f[], int n) 
 { 
 	int i, j; 
 
-	printf ("Following activities are selected n"); 
+	cout<<"SELECTED ACTIVITIES"<<endl; 
 
 	
 	i = 0; 
-	printf("%d ", i); 
+	cout<<i<<endl; 
 
 	 
 	for (j = 1; j < n; j++) 
@@ -18,7 +19,7 @@ void printMaxActivities(int s[], int f[], int n)
 
 	if (s[j] >= f[i]) 
 	{ 
-		printf ("%d ", j); 
+		cout<<j<<endl; 
 		i = j; 
 	} 
 	} 
@@ -27,9 +28,24 @@ void printMaxActivities(int s[], int f[], int n)
 
 int main() 
 { 
-	int s[] = {1, 3, 0, 5, 8, 5}; 
-	int f[] = {2, 4, 6, 7, 9, 9}; 
-	int n = sizeof(s)/sizeof(s[0]); 
-	printMaxActivities(s, f, n); 
+	int s[100]; 
+	cout<<"ENTER THE NUMBER OF ACTIVITIES"<<endl;
+	int n;
+	cin>>n;
+	cout<<"ENTER THE START TIME"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cin>>s[i];
+		
+	}
+	int f[100]; 
+		cout<<"ENTER THE END TIME"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		cin>>f[i];
+		
+	}
+	int N = sizeof(s)/sizeof(s[0]); 
+	MAXIMUMACTS(s, f, n); 
 	return 0; 
 } 
